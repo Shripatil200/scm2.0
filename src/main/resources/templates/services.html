@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is services page</h1>
+
+
+    <div class="hostTag" th:replace="~{base :: parent(~{:: section})}">
+
+        <section>
+            <h1>This is Dynamic content pased as parameter to fragment using Tag name</h1>
+        </section>
+    
+
+    </div>
+
+<hr>
+    <div class="hostTag" th:replace="~{base :: parent(~{:: #section1})}">
+
+        <section id="section1">
+            <h1>This is Dynamic content pased as parameter to fragment using <ul>Id</ul></h1>
+        </section>
+
+    </div>
+
+    <hr>
+
+    <div class="hostTag" th:replace="~{base :: parent(~{:: .section2})}">
+
+        <section class="section2">
+            <h1>This is Dynamic content pased as parameter to fragment using <ul>Class</ul></h1>
+        </section>
+
+    </div>
+
+
+</body>
+</html>

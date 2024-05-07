@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>this is about page</h1>
+    <hr>
+    <!-- using fragment -->
+
+    <div class="hostTag" th:replace="~{base :: parent(~{::section})}">
+        <section>
+            <h1>this is dynamic content</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea eum tempora vitae quaerat vero blanditiis ut qui animi quae ex.</p>
+            <button>Click here</button>
+
+        </section>
+    </div>
+
+  
+</body>
+</html>
