@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{:: #content}, ~{:: title}, ~{:: script})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About page</title>
 </head>
 <body>
-    <h1>this is about page</h1>
-    <hr>
-    <!-- using fragment -->
+    <div id="content">
+        <h1>Welcome to about page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, aliquam!</p>
 
-    <div class="hostTag" th:replace="~{base :: parent(~{::section})}">
-        <section>
-            <h1>this is dynamic content</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea eum tempora vitae quaerat vero blanditiis ut qui animi quae ex.</p>
-            <button>Click here</button>
-
-        </section>
     </div>
 
-  
+    <script>
+        console.log("about page");
+    </script>
+    <script>
+        console.log("second script from about page");
+    </script>
 </body>
-</html>
+</html> 

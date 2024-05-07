@@ -1,9 +1,46 @@
-<div class="parentTag" th:fragment="parent(content)">
-<h1>This ois parent fragment</h1>
+<!DOCTYPE html>
+<html lang="en"
+th:fragment="parent(content, title,script)"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-th-replace="${title}">SCM</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Common header -->
 
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam blanditiis maiores neque animi harum reiciendis fugit asperiores commodi? Eius, laborum?</p>
+    <ul class="p-4">
+        <li>
+            <a data-th-href="@{'/home'}">Home</a>
+        </li>
+        <li>
+            <a data-th-href="@{'/services'}">Services</a>
+        </li>
+        <li>
+            <a data-th-href="@{'/about'}">About</a>
+        </li>
+    </ul>
 
-<div th:replace="${content}"></div>
+    <!-- main content -->
+
+   <div class="p-4 ">
+        <section data-th-replace="${content}"></section>
+   </div>
 
 
-</div>
+
+    <!-- Common footer -->
+
+    <footer class="p-4">
+        Footer: Learning with Durgesh
+    </footer>
+
+<!-- flowbite js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    <th:block data-th-replace="${script}"></th:block>
+</body>
+</html>
