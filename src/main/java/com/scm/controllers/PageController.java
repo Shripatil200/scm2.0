@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 
+
 @Controller
 public class PageController {
 
@@ -35,4 +36,26 @@ public class PageController {
         System.out.println("services page controller");
         return "services";
     }
+
+    //Contact page
+    @RequestMapping("/contact")
+    public String contact(){
+        System.out.println("services page controller");
+        return "contact";
+    }
+    //Login page
+    @RequestMapping("/login")
+    public String login(){
+        System.out.println("services page controller");
+        return "login";
+    }
+
+        //register page
+    @RequestMapping("/register")
+    public String register(){
+        System.out.println("services page controller");
+        return "register";
+    }
+
+
 }
