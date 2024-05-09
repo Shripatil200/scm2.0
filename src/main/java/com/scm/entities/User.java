@@ -4,13 +4,15 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.*;
 
 @Entity(name = "user")
 @Table(name = "users")
@@ -19,7 +21,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
 
 public class User {
 
@@ -34,11 +35,11 @@ public class User {
 
     private String password;
 
-    @Column(length = 10000)
+    @Column(length = 1000)
     private String about;
 
-     @Lob
-    private byte[] profilePic;
+    @Column(length = 1000)
+    private String profilePic;
 
     private String phoneNumber;
 
@@ -53,5 +54,9 @@ public class User {
     private Providers provider = Providers.SELF;
     private String providerUserId;
 
-}
+    // add more fields if needed
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<Contact> contacts = new ArrayList<>();
+
+}
