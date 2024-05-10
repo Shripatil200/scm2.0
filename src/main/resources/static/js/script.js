@@ -16,7 +16,7 @@ function changeTheme() {
 
     // set to web page
 
-    changePageTheme(currentTheme, currentTheme);
+    changePageTheme(currentTheme, "");
 
 
 
@@ -25,9 +25,11 @@ function changeTheme() {
     const changeThemeButton = document.querySelector('#theme_change_button');
 
     
-    const oldTheme = currentTheme;
+    
 
     changeThemeButton.addEventListener("click", (event) => {
+
+        let oldTheme = currentTheme;
 
         // remove the current theme
 
@@ -70,7 +72,9 @@ function changePageTheme(theme, oldTheme) {
     setTheme(currentTheme);
 
     // remove the old theme
-    document.querySelector('html').classList.remove(oldTheme);
+    if(oldTheme){
+        document.querySelector('html').classList.remove(oldTheme);
+    }
 
     // set the current theme  
     document.querySelector('html').classList.add(theme);
